@@ -1,66 +1,110 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 📘 Frontend UAS
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## 👨‍💻 Biodata
 
-## About Laravel
+Ilham Budimansyah  
+NPM: 230302013  
+Tugas UAS - Pemrograman Berbasis Framework  
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🎯 Deskripsi  
+Aplikasi web frontend berbasis Laravel (Blade + HTTP client) yang berinteraksi dengan REST API backend (CodeIgniter). Fungsinya menampilkan, menambah, mengedit, dan menghapus data mahasiswa dan mata kuliah.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 🛠 Alat & Bahan
 
-## Learning Laravel
+- Sistem Operasi: Windows / Linux / macOS  
+- PHP: versi 8.1+  
+- Composer  
+- Laravel (frontend)  
+- CodeIgniter 4 (backend / REST API)  
+- Node.js & NPM (jika digunakan)  
+- MySQL  
+- Postman (opsional, untuk testing API)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+---
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## 📥 Langkah 1: Clone Repository Frontend
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+```php
+git clone https://github.com/IlhamBudimansyah/frontend-uas-230302013.git
+cd frontend-uas-230302013
+```
 
-## Laravel Sponsors
+---
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## ⚙ Langkah 2: Instalasi Dependency
 
-### Premium Partners
+```php
+composer install
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+---
 
-## Contributing
+## 🔧 Langkah 3: Konfigurasi Environment
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+1. Duplikat file .env.example:
+   bash
+   cp .env.example .env
+   
 
-## Code of Conduct
+2. Edit file .env:
+   env \
+   APP_ENV=local \
+   APP_DEBUG=true \
+   DB_CONNECTION=mysql \
+   DB_HOST=127.0.0.1 \
+   DB_PORT=3306 \
+   DB_DATABASE=nama_database \
+   DB_USERNAME=root \
+   DB_PASSWORD=
+   
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+---
 
-## Security Vulnerabilities
+## 🚀 Langkah 4: Menjalankan Backend (CodeIgniter)
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+1. Masuk ke folder backend CodeIgniter (Simon-kehadiran):
+   bash
+   cd Simon-kehadiran
+   composer install
+   php spark migrate
+   php spark serve
+   
 
-## License
+2. Akses API backend:
+   - http://localhost:8080/mahasiswa
+   - http://localhost:8080/matkul
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+---
+
+## 🔄 Langkah 5: Menjalankan Frontend Laravel
+
+bash
+cd ../frontend-uas-230302013
+php artisan serve
+
+
+Akses frontend di browser:
+
+http://127.0.0.1:8000
+
+
+---
+
+## 🧪 Langkah 6: Uji Fungsi Aplikasi
+Gunakan Postman untuk mengetes endpoint berikut:
+
+Mahasiswa \
+GET → http://localhost:8080/api/mahasiswa (Untuk menampilkan seluruh data mahasiswa yang ada) \
+POST → http://localhost:8080/api/mahasiswa (Untuk menambahkan data mahasiswa) \
+PUT → http://localhost:8080/api/mahasiswa/$1 (Untuk megedit data mahasiswa dengan NPM yang ingin kita edit) \
+DELETE → http://localhost:8080/api/mahasiswa/$1 (Untuk menghapus data mahasiswa dengan NPM yang ingin kita hapus)
+
+Matkul \
+GET → http://localhost:8080/api/matkul (Untuk menampilkan seluruh mata kuliah yang ada) \
+POST → http://localhost:8080/api/matkul (Untuk menambahkan mata kuliah) \
+PUT → http://localhost:8080/api/matkul/$1 (Untuk megedit mata kuliah dengan ID MATKUL yang ingin kita edit) \
+DELETE → http://localhost:8080/api/matkul/$1 (Untuk menghapus mata kuliah dengan ID MATKUL yang ingin kita hapus)
+
+---
