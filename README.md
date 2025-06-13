@@ -20,7 +20,7 @@ Aplikasi web frontend berbasis Laravel (Blade + HTTP client) yang berinteraksi d
 - CodeIgniter 4 (backend / REST API)  
 - Node.js & NPM (jika digunakan)  
 - MySQL  
-- Postman (opsional, untuk testing API)
+- Postman
 
 ---
 
